@@ -40,5 +40,6 @@ w2.set(88)
 w2Lable = Label(root, text='Transparentcy')
 w2.pack()
 w2Lable.pack()
-# Execute tkinter
+# Execute tkinter always on top
+root.call('wm', 'attributes', '.', '-topmost', '1')
 root.mainloop()
