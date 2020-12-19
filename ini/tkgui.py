@@ -19,12 +19,12 @@ def getValue(val):
 
 def setHotKee(event):
     ok = root.clipboard_get()
-    print(ok, event)
+    print(ok, event.char)
     hotkee1.config(text=ok)
 
-def key_press(event):
-    key = event.char
-    print(key, 'is pressed')
+# def key_press(event):
+
+    # print(event.char, 'is pressed')
 
 root.bind('<Key>', setHotKee)
 # tk.Button(text='Answer', command=answer).pack(fill=tk.X)
