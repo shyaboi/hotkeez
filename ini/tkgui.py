@@ -1,6 +1,9 @@
 from tkinter import *
 import tkinter as tk
 from tkinter import messagebox as mb
+
+
+
 # Create object
 root = Tk()
 
@@ -17,17 +20,8 @@ def getValue(val):
     print(roundy)
     root.attributes('-alpha', roundy)
 
-def setHotKee(event):
-    ok = root.clipboard_get()
-    print(ok, event.char)
-    hotkee1.config(text=ok)
 
-# def key_press(event):
 
-    # print(event.char, 'is pressed')
-
-root.bind('<Key>', setHotKee)
-# tk.Button(text='Answer', command=answer).pack(fill=tk.X)
 leftFrame = Frame(root)
 leftFrame.pack(side=LEFT)
  
@@ -71,3 +65,4 @@ hotkee6.pack(side=LEFT,padx=10)
 root.call('wm', 'attributes', '.', '-topmost', '1')
 
 root.mainloop()
+
