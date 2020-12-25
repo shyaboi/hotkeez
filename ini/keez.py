@@ -34,13 +34,17 @@ def get_scrolllock_state():
     VK_SCROLL = 0x91
     return hllDll.GetKeyState(VK_SCROLL)
 
-def copy_clipboard():
+def copy_clipboard(i):
     pya.hotkey('ctrl', 'c')
     time.sleep(.01)  # ctrl-c is usually very fast but your program may execute faster
-    return pyperclip.paste()    
+    hotKeez.insert(i,pyperclip.paste())
+    ok = hotKeez[i]
+    return ok
 
-def paste_clipboard():
+def paste_clipboard(i):
     pya.press('backspace')
+    pasty = hotKeez[i]
+    pyperclip.copy(pasty)
     pya.hotkey('ctrl', 'v')
     time.sleep(.01)  # ctrl-c is usually very fast but your program may execute faster
 
@@ -54,11 +58,16 @@ def on_release(key):
     #     
 
     if key == KeyCode(vk = 0, char='1'):
-        copy_clipboard()
+        copy_clipboard(0)
         print(get_scrolllock_state())
     if key == KeyCode(vk = 0, char='2'):
-        paste_clipboard()
-   
+        paste_clipboard(0)
+
+    if key == KeyCode(vk = 0, char='3'):
+        copy_clipboard(1)
+        print(get_scrolllock_state())
+    if key == KeyCode(vk = 0, char='4'):
+        paste_clipboard(1)
     if key == Key.esc:
         # Stop listener
         return False
