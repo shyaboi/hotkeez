@@ -1,4 +1,4 @@
-from pynput.keyboard import Key, Listener,KeyCode
+from pynput.keyboard import Key, Listener,KeyCode, HotKey
 import threading
 import sys
 import pyautogui as pya
@@ -6,6 +6,21 @@ import pyperclip
 import time
 
 hotKeez = []
+##################################hotkey testing#########################################
+# def on_activate():
+#     print('Global hotkey activated!')
+
+# def for_canonical(f):
+#     return lambda k: f(l.canonical(k))
+
+# hotkey = HotKey(
+#     HotKey.parse('<ctrl>+<alt>+h'),
+#     on_activate)
+# with Listener(
+#         on_press=for_canonical(hotkey.press),
+#         on_release=for_canonical(hotkey.release)) as l:
+#     l.join()
+##################################hotkey testing#########################################
 
 def get_capslock_state():
     import ctypes
