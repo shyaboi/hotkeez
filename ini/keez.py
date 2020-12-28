@@ -54,10 +54,6 @@ def paste_clipboard(i):
 
 
 def on_press(key):
-    print(f'on press: {key}')
-
-
-def on_release(key):
     if key == KeyCode(vk=0, char='1'):
         if get_scrolllock_state()==0:
             copy_clipboard(0)
@@ -68,6 +64,9 @@ def on_release(key):
             paste_clipboard(0)
     else:
         print(f'else:{key}')
+def on_release(key):
+    
+    
     # if key == KeyCode(vk = 0, char='3'):
     #     copy_clipboard(1)
     #     print(get_scrolllock_state())
